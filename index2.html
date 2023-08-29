@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Hijau</title>
+    <!-- Menggunakan Bootstrap 4 CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menggunakan font Google Fonts (Ubah dengan pilihan Anda) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* Gaya tambahan untuk tampilan */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #228B22;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .jumbotron {
+            background-image: url("https://bandasari.desa.id/desa/themes/bedas/images/headbg.jpg") center center / cover no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #fff;
+            border: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Hijau</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hubungi Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center">
+        <h1>Selamat datang di Blog Hijau</h1>
+        <p>Menyajikan berita dan informasi seputar lingkungan dan alam.</p>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Judul Artikel 1</h5>
+                        <p class="card-text">Deskripsi singkat artikel pertama Anda.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Judul Artikel 2</h5>
+                        <p class="card-text">Deskripsi singkat artikel kedua Anda.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Artikel Terbaru</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Judul Artikel 3</a></li>
+                            <li><a href="#">Judul Artikel 4</a></li>
+                            <li><a href="#">Judul Artikel 5</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Artikel Terbaru</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Judul Artikel 3</a></li>
+                            <li><a href="#">Judul Artikel 4</a></li>
+                            <li><a href="#">Judul Artikel 5</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        &copy; 2023 Blog Hijau. Dibuat dengan <span class="text-danger">&#9829;</span> oleh [Nama Anda].
+    </footer>
+
+    <!-- Menggunakan Bootstrap 4 JS (jQuery dan Popper.js harus dimuat sebelumnya) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
