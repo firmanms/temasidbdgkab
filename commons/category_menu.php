@@ -1,6 +1,6 @@
 <?php  defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<?php $alt_slug = IS_PREMIUM ? 'artikel' : 'first'; ?>
+<!-- <?php $alt_slug = IS_PREMIUM ? 'artikel' : 'first'; ?>
 
 <section x-data="{catMenu: false}">
   <button 
@@ -53,4 +53,4 @@
     </div>
   </div>
 
-</section>
+</section> -->

@@ -8,19 +8,16 @@
                         <figure class="avatar-150 mx-auto center">
                             <img src="http://cimenyan.desa.id/desa/themes/denatra/assets/image/kabbandung.gif" width="150" alt="">
                         </figure>
-                        <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color: #ffffff; font-size: 25px; font-weight:bold; font-family: 'Arizonia'">Selamat  Datang  di  Website  Resmi</a>
-                        <div class="col-12 col-sm text-center mt-3 text-sm-center text-white">
-                            <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; font-size: 56px; font-weight:bold; font-family: 'Arizonia'">Desa  Cimenyan<a class="small text-hide-xs" <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; font-size: 56px; font-weight:bold; font-family: 'Arizonia'">, <span class="auto-input"></span></a><br></br>
-                        </div>
-                        <div class="text-hide-xs">
-                            <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color: white; font-size: 27px; font-weight:bold; font-family: 'Arizonia'"Desa  Cimenyan Jl. Terusan Padasuka Kp. Cimenyan <br>Kecamatan Cimenyan - Kabupaten Bandung</a><br></br>
+                        <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color: #ffffff; font-size: 25px; font-weight:bold; font-family: 'Arizonia'">Selamat  Datang  di  Website  Resmi</a><br>
+                        <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color: #ffffff; font-size: 40px; font-weight:bold; font-family: 'Arizonia'"><?= ucwords($this->setting->sebutan_desa." ")?> <?= ucwords($desa['nama_desa'])?></a>
+                        <a class="small text-hide-xs" <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; font-size: 40px; color:#ffffff; font-weight:bold; font-family: 'Arizonia'">, <span class="auto-input"></span></a><br>
+                        <a style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color: white; font-size: 27px; font-weight:bold; font-family: 'Arizonia'"<?= ucwords($this->setting->sebutan_desa." ")?> <?= ucwords($desa['nama_desa'])?> <?= $desa['alamat_kantor']?> <br><?= ucwords($this->setting->sebutan_kecamatan." ".$desa['nama_kecamatan'])?> - <?= ucwords($this->setting->sebutan_kabupaten." ".$desa['nama_kabupaten'])?></a><br></br>
                             <br><h4 style="text-shadow: 3px 2px 5px #000;-webkit-text-stroke: 1px transparent; color:white; font-weight:bold; font-family: 'Arizonia'"">
                             Jl. Terusan Padasuka Kp. Cimenyan<br>                            
                                 <i class="fa-solid fa-square-phone" style="color:white;"></i> 71520576
                                 <i class="fa-solid fa-envelope" style="color:white;"></i> desacimenyan1892@gmail.com
-                            </h4>
-                            
-                        </div><br>
+                            </h4>                           
+                        <br>
                         <div class="row align-items-center">
                         <div class="col-4 container mt-1 main-container-center">
                             <form method=get action="https://www.cimenyan.desa.id/#artikel">
@@ -43,11 +40,23 @@
                         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
                         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
                         <div class="card mb-1 z-index-1">
-                            <marquee onmouseover="this.stop()" onmouseout="this.start()">
-                                <div class="teks_berjalan">
-                                    <span class="teks small">SELAMAT DATANG DI WEBSITE DESA CIMENYAN KECAMATAN CIMENYAN KABUPATEN BANDUNG/KANTOR DESA CIMENYAN MEMBUKA PELAYANAN PUBLIK SETIAP HARI SENIN - JUM'AT PUKUL 08.00 WIB - 15.00 WIB<a href="https://cimenyan.desa.id/artikel/" rel="noopener noreferrer" title="Baca Selengkapnya"></a></span>
-                                </div>
-                            </marquee>
+                        <marquee onmouseover="this.stop()" onmouseout="this.start()">
+                            <div class="teks_berjalan">
+                            <?php if (!empty($teks_berjalan)): ?>
+                                <?php foreach ($teks_berjalan AS $teks): ?>
+                                <span class="teks small"><?= $teks['teks']?>
+                                    <?php if ($teks['tautan']): ?>
+                                    <a href="<?= $teks['tautan'] ?>" rel="noopener noreferrer" title="Baca Selengkapnya"><?= $teks['judul_tautan']?></a>
+                                    <?php endif; ?>
+                                </span>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                            <span class="teks small">
+                            Selamat datang di <?= ucwords($this->setting->website_title); ?> <?= ucwords($this->setting->sebutan_desa); ?> <?= ucwords(($desa['nama_desa']) ? ' ' . $desa['nama_desa'] : ''); ?> <?= ucwords($this->setting->sebutan_kecamatan); ?> <?= ucwords(($desa['nama_kecamatan']) ? ' ' . $desa['nama_kecamatan'] : ''); ?> <?= ucwords($this->setting->sebutan_kabupaten); ?> <?= ucwords(($desa['nama_kabupaten']) ? ' ' . $desa['nama_kabupaten'] : ''); ?> Provinsi <?= ucwords(($desa['nama_propinsi']) ? ' ' . $desa['nama_propinsi'] : ''); ?>
+                            </span>
+                            <?php endif; ?>
+                            </div>
+                        </marquee>
                         </div>
                     </div>
                     
@@ -388,7 +397,7 @@
                         </div>
                         <div class="widget-body">
                             <div class="nav tag-cloud">
-                                <a href="#">Design</a>
+                                <a href="#"><?= ucwords($desa['nama_kabupaten']) ?></a>
                                 <a href="#">Development</a>
                                 <a href="#">Travel</a>
                                 <a href="#">Web Design</a>
@@ -414,58 +423,101 @@
     <p>Ini adalah halaman awal untuk memulai proyek Anda dengan Bootstrap 4.4.1.</p>
 </div> -->
 
-<?php $bg_header = $latar_website ? base_url($latar_website) : base_url($this->theme_folder.'/'.$this->theme .'/assets/images/header-bg.jpg') ?>
-
-<div class="container md:px-4 lg:px-5">
-  <header style="background-image: url(<?= $bg_header ?>);" class="bg-center bg-cover bg-no-repeat relative text-white">
-    <div class="absolute bg-gray-800 bg-opacity-60 top-0 left-0 right-0 h-full">
-    </div>
-    
-    <?php $this->load->view($folder_themes .'/commons/category_menu') ?>
-
-    <section class="relative z-10 text-center space-y-2 mt-3 px-3 lg:px-5">
-      <a href="<?= site_url() ?>">
-        <figure>
-          <img src="<?= gambar_desa($desa['logo']) ?>" alt="Logo <?= ucfirst($this->setting->sebutan_desa).' '.ucwords($desa['nama_desa']) ?>" class="h-16 mx-auto pb-2">
-        </figure>
-        <span class="text-h2 block"><?= NAMA_DESA ?></span>
-        <p><?= ucfirst($this->setting->sebutan_kecamatan_singkat) ?>
-          <?= ucwords($desa['nama_kecamatan']) ?>,
-          <?= ucfirst($this->setting->sebutan_kabupaten_singkat) ?>
-          <?= ucwords($desa['nama_kabupaten']) ?>,
-          Provinsi 
-          <?= ucwords($desa['nama_propinsi']) ?>
-        </p>
-      </a>
-      <?php if($w_gal) : ?>
-        <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4" class="block w-10/12 lg:w-1/4 mx-auto">
-          <div class="grid grid-flow-col gap-3 shadow-lg pt-2">
-            <?php foreach($w_gal as $album) : ?>
-              <?php if(is_file(LOKASI_GALERI . 'kecil_' . $album['gambar'])) : ?>
-                <?php $link = site_url('first/sub_gallery/'.$album['id']) ?>
-                <a href="<?= $link ?>" class="block w-32 h-20" title="<?= $album['nama'] ?>">
-                  <img src="<?= AmbilGaleri($album['gambar'], 'kecil') ?>" alt="<?= $album['nama'] ?>" class="w-32 h-20 object-cover">
-                </a>
-              <?php endif ?>
-            <?php endforeach ?>
-          </div>
-        </marquee>
-      <?php endif ?>
-    </section>
-    <?php if($teks_berjalan) : ?>
-      <div class="block px-3 bg-white text-white bg-opacity-20 py-1.5 text-xs mt-6 mb-0 z-20 relative">
-        <marquee onmouseover="this.stop();" onmouseout="this.start();" class="block divide-x-4 relative">
-          <?php foreach($teks_berjalan as $marquee) : ?>
-            <span class="px-3">
-              <?= $marquee['teks'] ?>
-              <?php if(trim($marquee['tautan']) && $marquee['judul_tautan']) : ?>
-              <a href="<?= $marquee['tautan'] ?>" class="hover:text-link"><?= $marquee['judul_tautan']?></a>
-              <?php endif ?>
-            </span>
-          <?php endforeach ?>
-        </marquee>
-      </div>
-    <?php endif ?>
-  </header>
-  <?php $this->load->view($folder_themes .'/commons/mobile_menu') ?>
+<div class="container">
+<div class="section ourTeam">
+	<header class="text-center">
+		<h2>Aparatur Desa</h2>
+	</header>
+	<div class="row">
+		<div class="col-xs-6 col-sm-4 col-md-3 i">
+			<div class="c text-center">
+				<div class="wrap">
+					<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="#" width="270" height="270" class="img-responsive">
+					<div class="info">
+						<h3 class="name">John Doe</h3>
+						<h4 class="position">Chief Executive Officer</h4>
+					</div>
+				</div>
+				<div class="more">
+					<p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
+					<div class="socials">
+						<a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 i">
+			<div class="c text-center">
+				<div class="wrap">
+					<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="#" width="270" height="270" class="img-responsive">
+					<div class="info">
+						<h3 class="name">Elizabeth Doe</h3>
+						<h4 class="position">Marketing Specialist</h4>
+					</div>
+				</div>
+				<div class="more">
+					<p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
+					<div class="socials">
+						<a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 i">
+			<div class="c text-center">
+				<div class="wrap">
+					<img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="#" width="270" height="270" class="img-responsive">
+					<div class="info">
+						<h3 class="name">Doug Doe</h3>
+						<h4 class="position">Head of Support</h4>
+					</div>
+				</div>
+				<div class="more">
+					<p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
+					<div class="socials">
+						<a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 i">
+			<div class="c text-center">
+				<div class="wrap">
+					<img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="#" width="270" height="270" class="img-responsive">
+					<div class="info">
+						<h3 class="name">Fabricio Doe</h3>
+						<h4 class="position">Chief Technical Officer</h4>
+					</div>
+				</div>
+				<div class="more">
+					<p>Ut sed consectetur ligula. Aenean id nibh accumsan, pre tium nulla in, lacinia aecenas mollis. Sed mauris at sollicitudin. Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.</p>
+					<div class="socials">
+						<a href="#" title="#" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="#" title="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" title="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="#" title="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+</div>
+<br>
+<script>
+    var typed = new Typed(".auto-input", {
+        strings: ["Desa Wisata", "Desa Digital", "Desa Sejahtera"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true
+    })
+</script>

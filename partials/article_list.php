@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
 <?php $url = site_url('artikel/'.buat_slug($post)) ?>
 <?php $abstract = potong_teks(strip_tags($post['isi']), 300) ?>
 <?php $image = ($post['gambar'] && is_file(LOKASI_FOTO_ARTIKEL.'sedang_'.$post['gambar'])) ?
