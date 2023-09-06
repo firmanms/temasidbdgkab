@@ -1,6 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
 <?php if($paging->num_rows > $paging->per_page) : ?>
+<p class="text-xs lg:text-sm py-3">Halaman <?= $paging->page ?> dari <?= $paging->end_link ?></p>
+<ul class="pagination justify-content-center">
+<?php if($paging->start_link) : ?>
+    <li class="page-item">
+        <a class="page-link" href="<?= site_url($paging_page.'/'.$paging->start_link)?>" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+    </li>
+<?php endif ?>
+<?php for($page=$paging->start_link; $page<=$paging->end_link; $page++) : ?>
+    <li class="page-item <?= ($p == $page || $paging->page == $page) ? 'active' : '' ?>"><a class="page-link" href="<?= site_url($paging_page.'/'.$page.$paging->suffix)?>"><?= $page ?></a></li>
+<?php endfor ?>
+<?php if($paging->end_link) : ?>
+    <li class="page-item">
+        <a class="page-link" href="<?= site_url($paging_page.'/'.$paging->end_link)?>"><i class="fas fa-chevron-right"></i></a>
+    </li>
+<?php endif ?>
+</ul>
+<?php endif ?>
+<!-- <?php if($paging->num_rows > $paging->per_page) : ?>
   <p class="text-xs lg:text-sm py-3">Halaman <?= $paging->page ?> dari <?= $paging->end_link ?></p>
   <ul class="pagination flex gap-2 flex-wrap">
     <?php if($paging->start_link) : ?>
@@ -29,4 +46,4 @@
       </li>
     <?php endif ?>
   </ul>
-<?php endif ?>
+<?php endif ?> -->

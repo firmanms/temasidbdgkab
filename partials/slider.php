@@ -1,29 +1,39 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
-<section class="sliderx w-full relative group transition-all duration-300 overflow-hidden">
-  <div class="owl-carousel rounded-lg h-48 lg:h-[400px] z-10 relative w-full">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
     <?php foreach($slider_gambar['gambar'] as $data) : ?>
-    <?php $img = $slider_gambar['lokasi'] . 'sedang_' . $data['gambar']; ?>
-    <?php if(is_file($img)) : ?>
-    <figure class="h-48 lg:h-[400px] w-full">
-      <img src="<?= base_url($img) ?>" alt="<?= $data['judul'] ?>"
-        class="max-w-full w-full h-48 lg:h-[400px] object-cover">
-
-        <?php if($slider_gambar['sumber'] != 3) : ?>
-          <div class="absolute bg-black bg-opacity-60 bottom-0 left-0 right-0 text-white group">
-            <a href="<?= site_url('artikel/'.buat_slug($data)) ?>" class="font-bold text-h5 block py-4 px-5 group-hover:py-5 transition-all duration-300"><?= $data['judul'] ?></a>
-          </div>
-        <?php endif ?>
-    </figure>
-    <?php endif ?>
-    <?php endforeach ?>
-  </div>
-  <div class="slider-nav">
-    <span
-      class="slider-nav-prev px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 left-0 transform -translate-y-1/2 z-[99]"
-      title="Sebelumnya"><i class="fas fa-chevron-left text-lg text-white px-3"></i></span>
-    <span
-      class="slider-nav-next px-1 py-2 cursor-pointer transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:bg-primary-100 shadow absolute top-1/2 right-0 transform -translate-y-1/2 z-[99]"
-      title="Selanjutnya"><i class="fas fa-chevron-right text-lg text-white px-3"></i></span>
-  </div>
-</section>
+      <?php $img = $slider_gambar['lokasi'] . 'sedang_' . $data['gambar']; ?>
+      <?php if(is_file($img)) : ?>
+      <li data-target="#carouselExampleIndicators"></li>
+      <?php endif ?>
+      <?php endforeach ?>
+    </ol>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img class="d-block" src="<?= base_url($img) ?>" style="width:100%; height: 400px; object-fit: cover;" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+            <h5><?= $data['judul'] ?></h5>
+            
+        </div>
+      </div>
+      <?php foreach($slider_gambar['gambar'] as $data) : ?>
+      <?php $img = $slider_gambar['lokasi'] . 'sedang_' . $data['gambar']; ?>
+      <?php if(is_file($img)) : ?>
+      <div class="carousel-item">
+        <img class="d-block" src="<?= base_url($img) ?>"  style="width:100%; height: 400px; object-fit: cover;" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+            <h5><?= $data['judul'] ?></h5>
+        </div>
+      </div>
+      <?php endif ?>
+      <?php endforeach ?>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>

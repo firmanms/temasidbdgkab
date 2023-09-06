@@ -62,7 +62,7 @@
                     
                 </div>
                 <div class="col-lg-8 m-15px-tb">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -99,10 +99,14 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="sr-only">Next</span>
                         </a>
-                      </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="blog-grid">
+                            <div class="d-flex justify-content-between" >
+                    <button class="btn-info btn-sm">Layanan Mandiri <i class="fa-solid fa-person-walking-arrow-right"></i></button>
+                    <button class="btn-success btn-sm">Login Admin <i class="fa-solid fa-person-walking-arrow-right"></i></button>
+                </div>
                                 <div class="blog-img">
                                     <div class="date">
                                         <span>04</span>

@@ -6,41 +6,7 @@
   gambar_desa($desa['logo']);
 ?>
 
-<div class="col-sm-6">
-    <div class="blog-grid">      
-        <div class="blog-img">
-            <div class="date">
-                 <!-- <span>04</span> -->
-                <label><?= tgl_indo($post['tgl_upload']) ?></label>
-            </div>
-            <a href="<?= $url ?>">
-                <img src="<?= $image ?>" title="" alt="" style=" object-fit: cover;">
-            </a>
-            <div class="blog-info">
-            <h5><a href="<?= $url ?>"><?= $post['judul'] ?></a></h5>
-            <!-- <p><?= $abstract ?></p> -->
-            <div class="btn-bar">
-                <a href="<?= $url ?>" class="px-btn-arrow">
-                    <span>Selengkapnya</span>
-                    <i class="arrow"></i>
-                </a>
-            </div>
-        </div>
-        </div>
-        <!-- <div class="blog-info">
-            <h5><a href="<?= $url ?>"><?= $post['judul'] ?></a></h5>
-            <p><?= $abstract ?></p>
-            <div class="btn-bar">
-                <a href="<?= $url ?>" class="px-btn-arrow">
-                    <span>Selengkapnya</span>
-                    <i class="arrow"></i>
-                </a>
-            </div>
-        </div> -->
-    </div>
-</div>
-
-<!-- <div class="max-w-full w-full bg-white shadow rounded-lg p-3 lg:p-5 border overflow-auto">
+<div class="max-w-full w-full bg-white shadow rounded-lg p-3 lg:p-5 border overflow-auto">
   <figure class="h-auto lg:h-32 w-1/3 float-left pr-3 pb-3 <?php $image === gambar_desa($desa['logo']) and print('lg:h-auto') ?>">
     <img src="<?= $image ?>" alt="<?= $post['judul'] ?>" class="<?php $image !== gambar_desa($desa['logo']) and print('lg:h-32 w-full object-cover object-center') ?> max-w-full mx-auto h-auto">
   </figure>
@@ -55,4 +21,4 @@
       <?php endif ?>
     </ul>
   </div>
-</div> -->
+</div>
