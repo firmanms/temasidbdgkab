@@ -1,6 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!-- widget wilayah desa -->
+<div class="widget widget-wilayah desa">
+    <div class="widget-title">
+        <h3><i class="fas fa-map-marker-alt mr-1"></i> <?= $judul_widget ?></h3>
+    </div>
+    <div class="widget-body">
+    <div id="map_wilayah" style="height:200px;"></div>
+        <div class="nav tag-cloud">
+            <a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>">Buka peta</a>
+        </div>
+    </div>
+</div>
+<!-- End widget wilayah desa -->
 
-<div class="box box-primary box-solid">
+<!-- <div class="box box-primary box-solid">
   <div class="box-header">
     <h3 class="box-title">
       <i class="fas fa-map-marker-alt mr-1"></i><?= $judul_widget ?>
@@ -10,7 +23,7 @@
     <div id="map_wilayah" style="height:200px;"></div>
     <a href="https://www.openstreetmap.org/#map=15/<?=$data_config['lat']."/".$data_config['lng']?>" class="text-link">Buka peta</a>
   </div>
-</div>
+</div> -->
 
 <script>
   //Jika posisi kantor desa belum ada, maka posisi peta akan menampilkan seluruh Indonesia

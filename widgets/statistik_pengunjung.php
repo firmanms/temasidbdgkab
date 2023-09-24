@@ -1,8 +1,9 @@
-<div class="box box-primary box-solid">
-  <div class="box-header">
-    <h3 class="box-title"><i class="fas fa-chart-line mr-1"></i><?= $judul_widget ?></h3>
-  </div>
-  <div class="box-body">
+<!-- widget statistik pengunjung -->
+<div class="widget widget-tags">
+    <div class="widget-title">
+        <h3><i class="fas fa-chart-line mr-1"></i><?= $judul_widget ?></h3>
+    </div>
+    <div class="widget-body">
     <?php
     function num_toimage($tot,$jumlah)
     {
@@ -46,5 +47,15 @@
 					<?= num_toimage($statistik_pengunjung['total'], $statistik_pengunjung['total']); ?></td>
 			</tr>
 		</table>
-	</div>
+    </div>
 </div>
+<!-- End widget statistik pengunjung -->
+
+<!-- <div class="box box-primary box-solid">
+  <div class="box-header">
+    <h3 class="box-title"><i class="fas fa-chart-line mr-1"></i><?= $judul_widget ?></h3>
+  </div>
+  <div class="box-body">
+    
+	</div>
+</div> -->

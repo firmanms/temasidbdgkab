@@ -1,5 +1,48 @@
 <?php defined('BASEPATH') || exit('No direct script access allowed'); ?>
 
+<!-- Trending Post -->
+<div class="widget widget-post">
+    <div class="widget-title">
+        <h3><i class="fas fa-user  mr-1"></i><?= $judul_widget ?></h3>
+    </div>
+    <div class="widget-body">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://www.bootdey.com/image/200x250/CCCCCCCC/000000" alt="First slide">
+                <center>
+                    <b>Nama</b><br>
+                    Jabatan<br>
+                    <h5><span class="badge badge-secondary">Status Kehadiran</span></h5>
+                </center>
+              </div>
+              <?php foreach ($aparatur_desa['daftar_perangkat'] as $data) : ?>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="<?= $data['foto'] ?>" alt="Second slide">
+                <center>
+                    <b><?= $data['nama'] ?></b><br>
+                    <?= $data['jabatan'] ?><br>
+                    <h5><span class="badge badge-secondary">Status Kehadiran</span></h5>
+                </center>
+              </div>
+              <?php endforeach ?>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://www.bootdey.com/image/200x250/CCCCCCCC/000000" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+</div>
+<!-- End Trending Post -->
+
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">
